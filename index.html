@@ -27,7 +27,7 @@
 			}
 			
 			this.getLetterCount = function() {
-                var letterCount = wordsArray.join(" ");
+                var letterCount = this.wordsArray.join(" ");
 				return letterCount.length;
                 }
                 
@@ -35,11 +35,11 @@
 			
 			
 			this.reverse = function() {
-				return wordsArray.reverse();
+				this.wordsArray.reverse();
 			}
 			
 			this.getWordAt = function(i) {
-				//return the word at index i
+				return this.wordsArray[i];
 			}
 		}
 		
@@ -50,11 +50,11 @@
         console.log(s.getWordCount());
 		console.log(s.getLetterCount() == 19); //remember spaces!
         console.log(s.getLetterCount());
-        console.log(s.reverse());
-//		console.log(s.getWordAt(0) == "Hello");
-//		s.reverse();
-//		console.log(s.getWordAt(0) == "Computer");
-
+		console.log(s.getWordAt(0) == "Hello");
+        console.log(s.getWordAt(0));
+		s.reverse();
+		console.log(s.getWordAt(0) == "Computer");
+        console.log(s.getWordAt(0));
 		 /*
 		 
 		 Create a new constructor function for a Paragraph
