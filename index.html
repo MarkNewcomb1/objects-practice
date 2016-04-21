@@ -55,6 +55,35 @@
 		s.reverse();
 		console.log(s.getWordAt(0) == "Computer");
         console.log(s.getWordAt(0));
+        
+        function Paragraph(sentenceArray) {
+         
+            this.getWordCount = function() {
+                var sum = 0;
+                for (var s = 0; s < sentenceArray.length; s++) {
+                    sum += sentenceArray[s].getWordCount();
+                }
+                return sum;
+            }
+            
+            
+            this.getLetterCount = function() {
+                var sum = 0;
+                for (var s = 0; s < sentenceArray.length; s++) {
+                    sum += sentenceArray[s].getLetterCount();
+                }
+                return sum;
+            }
+            
+            this.getWordAt(index) = function() {
+                var allWords = [];
+                for (var s = 0; s < sentenceArray.length; s++) {
+                    allWords = allWords.concat(sentenceArray[s].getWords());
+                }
+                return allWords[index];
+            }
+            
+        }
 		 /*
 		 
 		 Create a new constructor function for a Paragraph
