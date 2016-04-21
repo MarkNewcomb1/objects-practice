@@ -21,7 +21,9 @@
 			this.wordsArray = wordsArray;
 			
 			this.getWordCount = function() {
-                		//find the amount of words in the sentence
+                	return this.wordsArray.length;
+                
+                //find the amount of words in the sentence
 			}
 			
 			this.getLetterCount = function() {
@@ -41,10 +43,11 @@
 		
 		var s = new Sentence(["Hello", "I", "Am", "Computer"]);
 		console.log(s.getWordCount() == 4);
-		console.log(s.getLetterCount() == 20); //remember spaces!
-		console.log(s.getWordAt(0) == "Hello");
-		s.reverse()
-		console.log(s.getWordAt(0) == "Computer");
+        console.log(s.getWordCount());
+//		console.log(s.getLetterCount() == 19); //remember spaces!
+//		console.log(s.getWordAt(0) == "Hello");
+//		s.reverse();
+//		console.log(s.getWordAt(0) == "Computer");
 
 		 /*
 		 
@@ -61,7 +64,7 @@
 			p.getSentenceCount()
 			p.addToHTML("paragraphs")
 		
-		
+		*/
 	</script>
 </body>
 </html>
