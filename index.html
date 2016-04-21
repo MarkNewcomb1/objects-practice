@@ -27,6 +27,12 @@
 			}
 			
 			this.getLetterCount = function() {
+                var amountOfLetters = 0;
+                for (var i = 0; i < this.wordsArray.length; i++){
+                    amountOfLetters += this.wordsArray.length[i];
+                }
+                console.log(this.amountOfLetters);
+                return amountOfLetters;
                 		//find the amount of letters in the sentence
 			}
 			
@@ -44,7 +50,7 @@
 		var s = new Sentence(["Hello", "I", "Am", "Computer"]);
 		console.log(s.getWordCount() == 4);
         console.log(s.getWordCount());
-//		console.log(s.getLetterCount() == 19); //remember spaces!
+		console.log(s.getLetterCount() == 19); //remember spaces!
 //		console.log(s.getWordAt(0) == "Hello");
 //		s.reverse();
 //		console.log(s.getWordAt(0) == "Computer");
