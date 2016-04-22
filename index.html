@@ -41,6 +41,9 @@
 			this.getWordAt = function(i) {
 				return this.wordsArray[i];
 			}
+            this.getAsString = function() {
+                return this.wordsArray.join(" ");
+            }
 		}
 		
 		/* Some Tests. Make them all pass! */
@@ -57,7 +60,6 @@
         console.log(s.getWordAt(0));
         
         function Paragraph(sentenceArray) {
-         
             this.getWordCount = function() {
                 var sum = 0;
                 for (var s = 0; s < sentenceArray.length; s++) {
@@ -75,7 +77,7 @@
                 return sum;
             }
             
-            this.getWordAt(index) = function() {
+            this.getWordAt = function(index) {
                 var allWords = [];
                 for (var s = 0; s < sentenceArray.length; s++) {
                     allWords = allWords.concat(sentenceArray[s].getWords());
@@ -83,21 +85,41 @@
                 return allWords[index];
             }
             
+            this.getSentenceCount = function() {
+                return sentenceArray.length;
+            }
+            
+            this.addToHTML = function(id) {
+                var el = document.getElementById(id);
+                var s = "";
+                
+                for (var i = 0; i < sentenceArray.length; i++) {
+                    s+= sentenceArray[i].getAsString();
+                    s+= " ";
+                }
+                el.innerHTML = s;
+            }
+            
         }
+        var s2 = new Sentence (["I", "am", "not", "human"]);
+        p = new Paragraph([s, s2]);
+        console.log(p.getLetterCount)
+        console.log(p.getSentenceCount());
+        console.log(p.addToHTML("paragraphs"));
 		 /*
 		 
 		 Create a new constructor function for a Paragraph
 		 
 		 You should be able to
-		 	var s2 = new Sentence (["I", "am", "not", "human"]);
-		 	p = new Paragraph([s, s2]);
+		 	
+		 	
 		 
 		 Implement the following:
 			p.getWordCount()
 			p.getLetterCount()
 			p.getWordAt(10)
-			p.getSentenceCount()
-			p.addToHTML("paragraphs")
+			
+			
 		
 		*/
 	</script>
