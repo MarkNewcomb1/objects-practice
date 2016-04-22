@@ -49,15 +49,6 @@
 		/* Some Tests. Make them all pass! */
 		
 		var s = new Sentence(["Hello", "I", "Am", "Computer"]);
-		console.log(s.getWordCount() == 4);
-        console.log(s.getWordCount());
-		console.log(s.getLetterCount() == 19); //remember spaces!
-        console.log(s.getLetterCount());
-		console.log(s.getWordAt(0) == "Hello");
-        console.log(s.getWordAt(0));
-		s.reverse();
-		console.log(s.getWordAt(0) == "Computer");
-        console.log(s.getWordAt(0));
         
         function Paragraph(sentenceArray) {
             this.getWordCount = function() {
@@ -80,7 +71,7 @@
             this.getWordAt = function(index) {
                 var allWords = [];
                 for (var s = 0; s < sentenceArray.length; s++) {
-                    allWords = allWords.concat(sentenceArray[s].getWords());
+                    allWords = allWords.concat(sentenceArray[s].wordsArray);
                 }
                 return allWords[index];
             }
@@ -103,25 +94,6 @@
         }
         var s2 = new Sentence (["I", "am", "not", "human"]);
         p = new Paragraph([s, s2]);
-        console.log(p.getLetterCount)
-        console.log(p.getSentenceCount());
-        console.log(p.addToHTML("paragraphs"));
-		 /*
-		 
-		 Create a new constructor function for a Paragraph
-		 
-		 You should be able to
-		 	
-		 	
-		 
-		 Implement the following:
-			p.getWordCount()
-			p.getLetterCount()
-			p.getWordAt(10)
-			
-			
-		
-		*/
 	</script>
 </body>
 </html>
